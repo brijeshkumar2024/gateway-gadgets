@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    --bg: #0f172a;
+    --card: #0b1220;
+}
+
+html,body,#root{
+    height:100%;
+}
+
+body{
+    @apply bg-gray-50 text-gray-900 antialiased font-body transition-colors duration-300;
+    background-image:
+        radial-gradient(circle at top left, rgba(124,58,237,0.12), transparent 25%),
+        radial-gradient(circle at top right, rgba(59,130,246,0.10), transparent 22%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 45%, #eef2ff 100%);
+    background-attachment: fixed;
+}
+
+.dark body{
+    @apply bg-slate-950 text-slate-100;
+    background-image:
+        radial-gradient(circle at top left, rgba(124,58,237,0.20), transparent 22%),
+        radial-gradient(circle at top right, rgba(14,165,233,0.16), transparent 20%),
+        linear-gradient(180deg, #020617 0%, #0f172a 55%, #111827 100%);
+}
+
+.dark .site-header,
+.dark .glass-card,
+.dark .shadow-soft-lg,
+.dark .bg-white,
+.dark .bg-gray-50,
+.dark .bg-gray-100{
+    color: inherit;
+}
+
+.dark .site-header{
+    @apply bg-slate-950/70 border-slate-800;
+}
+
+.dark .search-input{
+    @apply bg-slate-900 border-slate-700 text-slate-100 placeholder:text-slate-400;
+}
+
+.dark .filter-bar{
+    @apply bg-slate-900 text-slate-100 border-t border-slate-800;
+}
+
+.site-header{
+    @apply sticky top-0 z-40 bg-white/60 backdrop-blur-md border-b border-gray-100;
+}
+
+.nav-container{
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16;
+}
+
+.brand-link{
+    @apply inline-flex items-center gap-2 text-primary font-display text-lg font-semibold;
+}
+
+.search-input{
+    @apply w-full max-w-xl rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-accent;
+}
+
+.filter-bar{
+    @apply flex gap-3 overflow-x-auto px-4 py-3 bg-primary text-white text-sm;
+}
+
+.glass-card{
+    @apply bg-white/60 backdrop-blur-md rounded-xl p-4 shadow-soft-lg;
+}
